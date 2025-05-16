@@ -1,0 +1,132 @@
+{
+  "intents": [
+    {
+      "tags": "greeting",
+      "patterns": ["Hi", "Hello", "Hey there", "Good morning", "Is anyone there?"],
+      "responces": ["Hello! How can I assist you today?", "Hi! Looking to book an appointment or a test?", "Hey! What do you need help with?"]
+    },
+    {
+      "tags": "book_appointment",
+      "patterns": [
+        "I want to book an appointment with a doctor",
+        "Suggest me some doctors"
+      ],
+      "responces": [
+        "Sure! Which specialist would you like to see? We have Physician, Gynecologist, Dermatologist, Pediatricians, Neurologist, and Gastroenterologist. Here checkout our experianced doctors : [Doctors](http://localhost:5173/doctor)"
+      ]
+    },
+    {
+      "tags": "book_test",
+      "patterns": [
+        "I need to book a CT Scan",
+        "Schedule an X-Ray",
+        "Book me an MRI scan",
+        "I want to do an Ultrasound",
+        "Can I get a body test?",
+        "Help me schedule a medical test"
+      ],
+      "responces": [
+        "Sure. What kind of test would you like to book: CT Scan, X-Ray, MRI, or Ultrasound?. Please select a test type and a convenient time. [Book now]()"
+      ]
+    },
+    {
+      "tags": "help",
+      "patterns": ["What can you do?", "Help", "How can you help me?", "Assistance please"],
+      "responces": [
+        "I can help you book doctor appointments and schedule diagnostic tests like MRI, CT Scan, and more.",
+        "You can ask me to book a doctor's appointment or schedule a lab test."
+      ]
+    },
+    {
+      "tags": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Great, thanks"],
+      "responces": ["You're welcome!", "Happy to help!", "Let me know if you need anything else."]
+    },
+    {
+      "tags": "goodbye",
+      "patterns": ["Bye", "Goodbye", "See you later", "Talk to you soon"],
+      "responces": ["Take care!", "Goodbye! Feel better soon!", "See you next time."]
+    },
+    {
+        "tags": "FAQ1",
+        "patterns": ["Can i cancle my appointments", "I want to cancle my appointments", "how to cancle my appointments"],
+        "responces": ["Yes, you can cancle your appointments just navigate to: [My appointments]() and press cancle"]
+    },
+    {
+        "tags": "FAQ2",
+        "patterns": ["How can I change my password", "I forgot my password"],
+        "responces": ["No problem you can update your password using your email [chick here]()"
+    ]
+    },
+    {
+        "tags": "FAQ3",
+        "patterns": ["Will I get a refund if a cancle my appointment", "Can I get a refund", "I want my money back"],
+        "responces": ["Yes, you will get a refund if you cancle your appointment"]
+    },
+    {
+        "tags": "physician",
+        "patterns": [
+          "I have a fever", "I'm feeling weak", "I have body aches", "I feel sick",
+          "I think I have the flu", "I'm coughing and sneezing", "I have a cold",
+          "I feel tired all the time", "I have chills", "I'm not feeling well"
+        ],
+        "responses": [
+          "You should see a General Physician for these symptoms. Book here: [Book Now](http://localhost:5173/doctor/Physician)"
+        ]
+    },
+
+    {
+        "tags": "gynecologist",
+        "patterns": [
+          "I'm pregnant", "I missed my period", "I have menstrual cramps", "I'm facing PCOS problems",
+          "I need a pregnancy checkup", "Pain during periods", "Irregular periods", "Women's health issues"
+        ],
+        "responses": [
+          "You should consult a Gynecologist. Book here: [Book Now](http://localhost:5173/doctor/Gynecologist)"
+        ]
+    },
+    {
+        "tags": "dermatologist",
+        "patterns": [
+          "I have a skin rash", "My skin is itching", "I have acne", "I have a fungal infection",
+          "I'm losing hair", "My scalp is dry", "Skin irritation", "Psoriasis", "Eczema", "Dry skin"
+        ],
+        "responses": [
+          "You might need a Dermatologist for these symptoms. Book here: [Book Now](http://localhost:5173/doctor/Dermatologist)"
+        ]
+    },
+    {
+        "tags": "pediatrician",
+        "patterns": [
+          "My child has a fever", "My baby is crying a lot", "Child has a cold", "My kid has a rash",
+          "Pediatric checkup", "Vaccination for child", "Baby health issue", "Child diarrhea", "Infant has cough"
+        ],
+        "responses": [
+          "Please consult a Pediatrician for your child's symptoms. Book here: [Book Now](http://localhost:5173/doctor/Pediatricians)"
+        ]
+    },
+    {
+        "tags": "neurologist",
+        "patterns": [
+          "I have frequent headaches", "I'm feeling dizzy", "My hands are shaking", "I have a nerve issue",
+          "I get seizures", "Tingling in limbs", "Brain-related problems", "I feel numbness in my limbs",
+          "My memory is getting worse", "I think I have a neurological issue"
+        ],
+        "responses": [
+          "You should consult a Neurologist. Book here: [Book Now](http://localhost:5173/doctor/Neurologist)"
+        ]
+    },
+    {
+        "tags": "gastroenterologist",
+        "patterns": [
+          "I have stomach pain", "I'm feeling bloated", "I have acidity", "Diarrhea issues",
+          "Constipation problems", "I'm vomiting", "I have digestion issues", "My stomach feels heavy",
+          "Gastric problem", "Heartburn"
+        ],
+        "responses": [
+          "For digestive and stomach-related issues, a Gastroenterologist is recommended. Book here: [Book Now](http://localhost:5173/doctor/Gastroenterologist)"
+        ]
+    } 
+
+  ]
+}
