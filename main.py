@@ -6,6 +6,8 @@ import numpy as np
 from keras import models
 import nltk
 from nltk.stem import WordNetLemmatizer
+from waitress import serve
+# from main import app
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
@@ -25,7 +27,7 @@ def add_cors_headers(response):
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
-    sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
+    sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     return sentence_words
 
 def bag_of_words(sentence):
@@ -52,7 +54,8 @@ def get_response(intents_list, intents_json):
     tag = intents_list[0]['intent']
     for intent in intents_json['intents']:
         if intent['tags'] == tag:
-            return random.choice(intent['responces'])
+            return random.choice(intent['responses'])
+    return "Sorry, I didn't understand that. Can you rephrase?"
 
 @app.route("/chat", methods=["GET", "POST"])
 def chat():
@@ -67,6 +70,6 @@ def chat():
     response = get_response(intents_list, intents)
     return jsonify({"response": response})
 
-
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    # Warning: Use only for development/testing
+    serve(app, host="0.0.0.0", port=8000)
